@@ -12,10 +12,12 @@ body {
   overflow: hidden;
   padding-bottom: 100%;
   border: 0;
+  -webkit-transition: 10.5 ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .square:hover {
-    opacity: 0.65;
+    opacity: 0.4;
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
 }

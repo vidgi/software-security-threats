@@ -345,6 +345,7 @@
               <p class="lead">4.1 Human, Technical and Leadership Aspects for Effective Cybersecurity Frameworks</p>
               <br>
               <p class="text-muted">
+                With the human aspects involved in cybersecurity, it is important to have a holistic view of the different parts that can lead to security vulnerabilities. Overall, when new parts of technology or a technology system are added, this requires more people and processes to manage the system. This leads to more operational complexity and because of this, the interactions between the technology, processes, and people increase accordingly. This can lead to loss of process visibility and control where it is difficult to manage new technologies  which in turn decreases the cybersecurity effectiveness with poorer human performance and more incidents overall. With this in mind, it is important to develop supporting processes on the human end of development and implementation as a part of software development in order to best mitigate cybersecurity vulnerabilities.
               </p>
               <p class="text-muted">
               </p>
@@ -370,6 +371,7 @@
               <p class="lead">4.2 Code Obfuscation</p>
               <br>
               <p class="text-muted">
+                Code obfuscation transforms normal readable code into a transformed version that is different from the original, making it more complex and difficult to understand. This is often done in order to prevent the code from being reused for other applications with ease or to prevent malicious forms of reverse engineering from occurring. Depending on the level of obfuscation, it might take more or less resources and there are various mechanisms of code obfuscation such as splitting apart and minifying code.  Overall, code obfuscation is a tool for preventing software vulnerabilities because it adds an additional layer for an attacker to decipher and find vulnerabilities in the software.
               </p>
               <p class="text-muted">
               </p>
@@ -395,6 +397,7 @@
               <p class="lead">4.3 Reverse Engineering</p>
               <br>
               <p class="text-muted">
+                Reverse engineering is the act of breaking down a good or in our case, program, into it’s elemental parts in order to understand the inner workings. There are many uses of reverse engineering where there are tricks and pitfalls for analyzing compiled code and obfuscated code. The process of reverse engineering can be exploited by malicious actors, but it can also be utilized to discover vulnerabilities before they are exploited. Overall, ethical hackers can utilize reverse engineering  in order to test software systems for weaknesses and there a wide range of tools and techniques to aid in the process of reverse engineering.
               </p>
               <p class="text-muted">
               </p>
@@ -414,10 +417,13 @@
               <p class="lead">4.4 User Input Validation</p>
               <br>
               <p class="text-muted">
+                Input validation is what prevents malicious and improper data from being inputted into an information system. It can be carried out on the client-side and/or the server-side code in order to ensure security of the infrastructure. Client-side validation is important since it is fast and helps with user experience, however it should not be used on it’s own. This is because client-side validation is browser-dependent and can be tricker and should be used in tandem with server-side validation, which is more reliable in protecting a system’s database from any malformed data or malicious attacks.
               </p>
               <p class="text-muted">
+                With client-side validation, we check that the data follows basic guidelines and is in the expected format and data type. An example can be seen in the screenshot below of client-side input validation below where the different fields are being checked. Client-side validation occurs on the front-end of web applications (such is with an HTML form component)  and responds quickly to the user’s input. This reduces the latency that occurs if only server-side was used for data validation.
               </p>
               <p class="text-muted">
+                As mentioned above, front-end code evaluates client-side input validation, and must be used with back-end code to handle server-side input validation. Server-side validation is done on the model-entity class by attaching attributes above the property declaration to define the data types that the property can accept. These specifications ensure that only proper data is accepted. Thus server-side validation is slower than client-side validation, but is more reliable and safe and overall improves user experience because of the improved security and error prevention.
               </p>
               <br>
 
@@ -425,10 +431,10 @@
           </div>
           <div data-aos="fade-right">
           <div class="col-xl">
-            <img class="featurette-image img-responsive center-block" src="diagrams/client-validation.png" alt="Diagram of client-side input validation">
+            <img class="featurette-image img-responsive center-block" src="diagrams/client-validation.png" alt="Diagram of client-side validation">
             <p class="text-muted"><i><center>Diagram of client-side input validation. Source: <a href="https://www.securecoding.com/blog/input-validation/"> SecureCoding </a></center></i></p>
-            <img class="featurette-image img-responsive center-block" src="diagrams/input-validation.png" alt="Diagram of input validationl">
-            <p class="text-muted"><i><center>"Diagram of system with client-side and server-side input validation. Source: <a href="https://www.securecoding.com/blog/input-validation/"> SecureCoding </a></center></i></p>
+            <img class="featurette-image img-responsive center-block" src="diagrams/input-validation.png" alt="Diagram of input validation">
+            <p class="text-muted"><i><center>Diagram of system with client-side and server-side input validation. Source: <a href="https://www.securecoding.com/blog/input-validation/"> SecureCoding </a></center></i></p>
 
           </div>
         </div>
@@ -442,6 +448,7 @@
               <p class="lead">4.5 Checksum and Integrity Checks</p>
               <br>
               <p class="text-muted">
+                Checksum and integrity checks are a powerful technique to prevent data from becoming lost or corrupted and maintain data integrity. There are various methods of data integrity verification, such as the model shown below where an algorithm is used on the file/database to verify that the code checksum is the same. These algorithms are designed to be quick and effective for data verification. As a tool for preventing software-based cyberattacks, it can help to ensure that data integrity is maintained across read/write operations to the database. It can also help to detect if a program has been altered, and cause the program to fail if tampering is detected. Integrity checks can be static, checked only at startup, or dynamic, checked repeatedly when the program is executing. On the negative side, hackers can pinpoint check through breakpoints and code inspection. Additionally, these types of checks, might only be able to verify static properties and might not detect temporary instruction patches or runtime attacks.
               </p>
               <p class="text-muted">
               </p>
@@ -475,8 +482,16 @@
               <p class="lead">Social and ethical impact of the topic.</p>
               <br>
               <p class="text-muted">
+                As discussed before, with the human aspects involved in cybersecurity, it is important to have a holistic view of the different parts that can lead to security vulnerabilities. This leads into the various social and ethical implications of the topic.
               </p>
               <p class="text-muted">
+                As mentioned in 4.1, when new parts of technology or a technology system are added, this requires more people and processes to manage the system. This leads to more operational complexity and because of this, the interactions between the technology, processes, and people increase accordingly. This can lead to loss of process visibility and control where it is difficult to manage new technologies  which in turn decreases the cybersecurity effectiveness with poorer human performance and more incidents overall.  With this in mind, it is important to develop supporting processes on the human end of development and implementation as a part of software development in order to best mitigate cybersecurity vulnerabilities.
+              </p>
+              <p class="text-muted">
+                As mentioned in 4.2 and 4.3, the process of reverse engineering can be exploited by malicious actors, but it can also be utilized to discover vulnerabilities before they are exploited. Ethical hackers can utilize reverse engineering  in order to test software systems for weaknesses and there a wide range of tools and techniques to aid in the process of reverse engineering.
+              </p>
+              <p class="text-muted">
+                Finally, another ethical implication of software-based vulnerabilities is regarding the discovery and reporting of these vulnerabilities. If a vulnerability is discovered, there is an ethical debate surrounding whether the exploit should be published or not. If the vulnerability is published without being sufficiently patched, the knowledge of the exploit could be used by more attacks to target systems that are not protected. However, if adequate information is not provided, this could lead to systems not being able to understand the full scope of the issue and that an attack can occur.
               </p>
               <br>
             </div>
@@ -500,6 +515,7 @@
               <p class="lead">Conclusions on Software-Based Cybersecurity Threats and Vulnerabilities.</p>
               <br>
               <p class="text-muted">
+                This paper has overviewed Software-Based Cybersecurity Threats and Vulnerabilities, detailing technical software bugs that are exploited to the benefit of attackers and the impacts in terms of cybersecurity infrastructure. The most common software vulnerabilities happen as a result of exploiting software bugs in the memory, user input exploits, race conditions and user access privileges. I have explained these vulnerabilities and provided examples of how these exploits work. Then, I reviewed tools and methods like effective cybersecurity frameworks, code obfuscation, reverse engineering, user input validation, checksum/integrity checks that are used as a part of a larger cybersecurity framework to find and prevent exploits from occurring. Finally, I discussed the social and ethical impacts of the topics in regards to the larger scope of cybersecurity. In summary, understanding these software-based vulnerabilities and the methods to mitigate them is crucial in the design of safe and effective software systems.
               </p>
               <p class="text-muted">
               </p>
