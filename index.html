@@ -197,7 +197,7 @@
           <div data-aos="fade-right">
           <div class="col-xl">
             <img class="featurette-image img-responsive center-block" src="diagrams/buffer-overflow.png" alt="Diagram of buffer overflow">
-            <p class="text-muted"><i><center>Diagram depicting buffer overflow. Source: <a href="https://avinetworks.com/glossary/buffer-overflow//"> AVI networks </a></center></i></p>
+            <p class="text-muted"><i><center>Diagram depicting buffer overflow. Source: <a href="https://avinetworks.com/glossary/buffer-overflow/"> AVI networks </a></center></i></p>
           </div>
         </div>
         </div>
@@ -210,11 +210,16 @@
               <p class="lead">3.2 User Input Exploits</p>
               <br>
               <p class="text-muted">
-                User input validation confirms that the inputted data follows rules where if this is not performed, it has the ability to lead to data corruption through user input attacks/exploits. One example of a user input attack is SQL injection, where injected SQL commands in user interfaces like a web form can be used to alter the database content or even worse, dump sensitive data and database information to the attacker. SQL injection attacks can lead to the leaking of information like credit card numbers and passwords.
+                User input validation confirms that the inputted data follows rules where if this is not performed, it has the ability to lead to data corruption through user input attacks/exploits. One example of a user input attack is SQL injection, where injected SQL commands in user interfaces like a web form can be used to alter the database content or even worse, dump sensitive data and database information to the attacker. SQL injection attacks can lead to the leaking of information like credit card numbers and passwords. There are three main methods of SQL injection: Error Based SQL Injection, Boolean Error SQL Injection, and Time-Based Query SQL Injection.
               </p>
               <p class="text-muted">
+                With Error Based SQL Injection, hackers fetch database information like table names and content from the visible database errors on production servers. To prevent this vulnerability, programmers can avoid publicly displaying database error messages so attackers are unable to see this information and exploit it.
               </p>
               <p class="text-muted">
+                Similar to Error Based SQL injection, hackers can gain entry into the database in a vulnerable application with Boolean Error SQL Injection. However, in this case, attackers might not have a visible error message and instead, can see that when a SQL query fails, parts of the website disappear or do not load, indicating that the query is still going through, even if the error message is not viewable. With this confirmation, the jacker can test the vulnerability level of the application and the proximity of the data extraction with wrong queries such as: https://xyz.com/index.php?id=1+AND+1=2. Because this condition is false, the hacker knows that if the webpage is not visible, then the application is vulnerable and can be exposed to a SQL injection attack.
+              </p>
+              <p class="text-muted">
+                With Time-Based Query SQL Injection, the attacker uses a command to the database to pause for a certain time period before responding. An example query would be: https://xya.com/index.php?id=1+AND+IF(version()+LIKE+'8%',sleep(5),false). However, if the database responds right away without the pause, then the application is not vulnerable to this type of vulnerability.
               </p>
               <br>
 
@@ -239,8 +244,10 @@
                 Race condition errors occur when the output of multiple processes occur in an unexpected order, which can cause various checks to fail, leading to a vulnerability. Exploiting and knowing about such flaws can be difficult to detect, and stresses the importance of techniques like test driven development, and planned flow of logic so that the tests can verify as many possibilities and conditions that can occur.
               </p>
               <p class="text-muted">
+                As seen in the diagram below, the success and impact of attackers depends on the processes of the scheduling algorithms of the server. Some potential impacts that can be caused by race condition exploits are being able to redeem the same coupon multiple times, being able to withdraw more money during a money transfer, and being able to cast multiple votes when a user should only have one vote.
               </p>
               <p class="text-muted">
+                Overall, web apps, file systems and networking environments are all susceptible to race condition attacks with targets like access control lists, payrolls, or financial ledgers being hefty targets. Race condition attacks typically occur less frequently, because they are difficult to engineer and rely on a very small window of opportunity. However, they are crucial to consider in the development process and test for since the effects can be devastating and be difficult to detect due to the nature of this situation.
               </p>
               <br>
 
@@ -265,6 +272,7 @@
                 User access privilege errors occur when attackers exploit a bug to gain elevated access to resources. This leads to the attacker being able to have more privileges, allowing them to perform unauthorized actions like accessing protected secret keys or restricting access to actual administrators and user groups.
               </p>
               <p class="text-muted">
+                Vertical privilege escalation occurs when a user gains access to functionality that they are not permitted to access, such as when a non-admin user is able to access a admin page that can delete user accounts. One example is such as when a website hosts sensitive functionality at a URL like: https://insecure-website.com/admin. In this case, the url might be accessible and common so that attackers can find this location by guessing/or inspecting the javascript for such URLs. Furthermore, some applications might even determine the user’s access rights and role and login and store in a submitted value such as with: https://insecure-website.com/login/home.jsp?admin=true.  This is insecure, because the values can be easily modified in the query string and gain administrative functions.
               </p>
               <p class="text-muted">
               </p>
@@ -337,13 +345,10 @@
               <p class="lead">4.1 Human, Technical and Leadership Aspects for Effective Cybersecurity Frameworks</p>
               <br>
               <p class="text-muted">
-              Memory safe violations modify the memory location contents where one of the most common techniques is buffer overflow. Overall, memory safety refers to preventing attackers from reading or writing to memory locations, other than those intended by the programmer.
               </p>
               <p class="text-muted">
-                With buffer overflow, this occurs when a program attempts to store more information in the buffer than can fit. This causes the additional overflow information to overflow into subsequent/nearby buffers which can overwrite and corrupt the data within those memory locations. This vulnerability allows exploiters to modify aspects of the process code and the integrity of the previously stored data.
               </p>
               <p class="text-muted">
-                Buffer overflow vulnerabilities are most at risk in C, which is widely used for systems programming. One particular weakness is that there is no automatic bounds-check for array and pointer access. So, if a programmer declares an array of size 4, it will not automatically throw an error if buffer[5] is accessed, and this must be checked to ensure that every memory access is within bounds. Subsequently, a buffer overflow bug is where the programmer does not provide adequate bounds checking, which results in an out-of-bounds memory access, yielding a write that is beyond the intended memory region. Attackers can exploit these accesses to alter the program’s designed behavior.
               </p>
               <br>
 
@@ -351,8 +356,8 @@
           </div>
           <div data-aos="fade-right">
           <div class="col-xl">
-            <img class="featurette-image img-responsive center-block" src="diagrams/buffer-overflow.png" alt="Diagram of buffer overflow">
-            <p class="text-muted"><i><center>Diagram depicting buffer overflow. Source: <a href="https://avinetworks.com/glossary/buffer-overflow//"> AVI networks </a></center></i></p>
+            <img class="featurette-image img-responsive center-block" src="diagrams/human-aspects.png" alt="Diagram of human aspects">
+            <p class="text-muted"><i><center>How new technology and human aspects lead to security vulnerabilities. Source: <a href="https://sloanreview.mit.edu/article/the-unaddressed-gap-in-cybersecurity-human-performance/"> MIT Sloan </a></center></i></p>
           </div>
         </div>
         </div>
@@ -365,7 +370,6 @@
               <p class="lead">4.2 Code Obfuscation</p>
               <br>
               <p class="text-muted">
-                User input validation confirms that the inputted data follows rules where if this is not performed, it has the ability to lead to data corruption through user input attacks/exploits. One example of a user input attack is SQL injection, where injected SQL commands in user interfaces like a web form can be used to alter the database content or even worse, dump sensitive data and database information to the attacker. SQL injection attacks can lead to the leaking of information like credit card numbers and passwords.
               </p>
               <p class="text-muted">
               </p>
@@ -377,8 +381,8 @@
           </div>
           <div data-aos="fade-right">
           <div class="col-xl">
-            <img class="featurette-image img-responsive center-block" src="diagrams/sql-injection.png" alt="Diagram of sql injection">
-            <p class="text-muted"><i><center>Diagram depicting SQL injection attack. Source: <a href="https://cwatch.comodo.com/blog/website-security/what-is-an-sql-injection-sqli/"> cWatch </a></center></i></p>
+            <img class="featurette-image img-responsive center-block" src="diagrams/code-obfuscation.jpg" alt="Diagram of sql injection">
+            <p class="text-muted"><i><center>Example of obfuscated javascript code. Source: <a href="https://codeforgeek.com/how-to-obfuscate-javascript-with-node-js/"> Code For Geek </a></center></i></p>
           </div>
         </div>
         </div>
@@ -391,7 +395,6 @@
               <p class="lead">4.3 Reverse Engineering</p>
               <br>
               <p class="text-muted">
-                Race condition errors occur when the output of multiple processes occur in an unexpected order, which can cause various checks to fail, leading to a vulnerability. Exploiting and knowing about such flaws can be difficult to detect, and stresses the importance of techniques like test driven development, and planned flow of logic so that the tests can verify as many possibilities and conditions that can occur.
               </p>
               <p class="text-muted">
               </p>
@@ -401,12 +404,6 @@
 
             </div>
           </div>
-          <div data-aos="fade-right">
-          <div class="col-xl">
-            <img class="featurette-image img-responsive center-block" src="diagrams/race-condition.png" alt="Diagram of race condition vulnerability">
-            <p class="text-muted"><i><center>Diagram depicting example of race condition vulnerability. Source: <a href="https://afourtech.com/race-condition-the-biggest-security-threat-in-modern-web-applications/"> AFour </a></center></i></p>
-          </div>
-        </div>
         </div>
 
         <a id="4.4"> </a>
@@ -417,7 +414,6 @@
               <p class="lead">4.4 User Input Validation</p>
               <br>
               <p class="text-muted">
-                User access privilege errors occur when attackers exploit a bug to gain elevated access to resources. This leads to the attacker being able to have more privileges, allowing them to perform unauthorized actions like accessing protected secret keys or restricting access to actual administrators and user groups.
               </p>
               <p class="text-muted">
               </p>
@@ -429,8 +425,11 @@
           </div>
           <div data-aos="fade-right">
           <div class="col-xl">
-            <img class="featurette-image img-responsive center-block" src="diagrams/user-access.png" alt="Diagram of access control">
-            <p class="text-muted"><i><center>Diagram depicting access control attack. Source: <a href="https://portswigger.net/web-security/access-control"> PortSwigger </a></center></i></p>
+            <img class="featurette-image img-responsive center-block" src="diagrams/client-validation.png" alt="Diagram of client-side input validation">
+            <p class="text-muted"><i><center>Diagram of client-side input validation. Source: <a href="https://www.securecoding.com/blog/input-validation/"> SecureCoding </a></center></i></p>
+            <img class="featurette-image img-responsive center-block" src="diagrams/input-validation.png" alt="Diagram of input validationl">
+            <p class="text-muted"><i><center>"Diagram of system with client-side and server-side input validation. Source: <a href="https://www.securecoding.com/blog/input-validation/"> SecureCoding </a></center></i></p>
+
           </div>
         </div>
         </div>
@@ -443,7 +442,6 @@
               <p class="lead">4.5 Checksum and Integrity Checks</p>
               <br>
               <p class="text-muted">
-                User access privilege errors occur when attackers exploit a bug to gain elevated access to resources. This leads to the attacker being able to have more privileges, allowing them to perform unauthorized actions like accessing protected secret keys or restricting access to actual administrators and user groups.
               </p>
               <p class="text-muted">
               </p>
@@ -455,8 +453,8 @@
           </div>
           <div data-aos="fade-right">
           <div class="col-xl">
-            <img class="featurette-image img-responsive center-block" src="diagrams/user-access.png" alt="Diagram of access control">
-            <p class="text-muted"><i><center>Diagram depicting access control attack. Source: <a href="https://portswigger.net/web-security/access-control"> PortSwigger </a></center></i></p>
+            <img class="featurette-image img-responsive center-block" src="diagrams/data-integrity.png" alt="Diagram of data integrity checking">
+            <p class="text-muted"><i><center>Diagram of data integrity checking. Source: <a href="https://www.researchgate.net/figure/Data-integrity-verification-model_fig1_327778753"> EURASIP Journal on Information Security </a></center></i></p>
           </div>
         </div>
         </div>
@@ -474,11 +472,11 @@
           <div data-aos="fade-right">
             <div class="col-md-7 col-md-push-0">
               <h2 class="featurette-heading">Social and Ethical Implications<span class="text-muted"></span></h2>
-              <p class="lead">Why I picked this topic.</p>
+              <p class="lead">Social and ethical impact of the topic.</p>
               <br>
-              <p class="text-muted">I believe this topic is highly important for all developers of software and related professionals to understand since it can eliminate some of the easy attacks and vulnerabilities that attackers would take advantage of. Similarly, this topic is important to me personally as I believe learning about these types of common exploits, will lead me to have a better understanding as a programmer with how to design and implement software to be guarded against these attacks. It will help me greatly to understand these basic concepts and common vulnerabilities, as this can greatly reduce the risk involved and chance for an attack to occur.</p>
+              <p class="text-muted">
               </p>
-              <p class="text-muted">Prior to this project, I only had a vague understanding of the area in the technical sense besides some of the memory and buffer overflow attacks mentioned in the systems course and some SQL injection attacks I learned about when I worked on the MyChart team at Epic, which were flagged as escalated issues due to their potential for endangering patient safety. Overall, I also have come to understand the impact that such attacks can cause through this class and my professional experience, and believe that further delving into the technical aspects will be beneficial for my professional and personal development. Additionally, further understanding the ethical implications of such issues, allows for a much more nuanced approach to understanding how cyberattacks can affect society as a whole.
+              <p class="text-muted">
               </p>
               <br>
             </div>
@@ -499,11 +497,11 @@
           <div data-aos="fade-right">
             <div class="col-md-7 col-md-push-0">
               <h2 class="featurette-heading">Summary and Conclusions<span class="text-muted"></span></h2>
-              <p class="lead">Why I picked this topic.</p>
+              <p class="lead">Conclusions on Software-Based Cybersecurity Threats and Vulnerabilities.</p>
               <br>
-              <p class="text-muted">I believe this topic is highly important for all developers of software and related professionals to understand since it can eliminate some of the easy attacks and vulnerabilities that attackers would take advantage of. Similarly, this topic is important to me personally as I believe learning about these types of common exploits, will lead me to have a better understanding as a programmer with how to design and implement software to be guarded against these attacks. It will help me greatly to understand these basic concepts and common vulnerabilities, as this can greatly reduce the risk involved and chance for an attack to occur.</p>
+              <p class="text-muted">
               </p>
-              <p class="text-muted">Prior to this project, I only had a vague understanding of the area in the technical sense besides some of the memory and buffer overflow attacks mentioned in the systems course and some SQL injection attacks I learned about when I worked on the MyChart team at Epic, which were flagged as escalated issues due to their potential for endangering patient safety. Overall, I also have come to understand the impact that such attacks can cause through this class and my professional experience, and believe that further delving into the technical aspects will be beneficial for my professional and personal development. Additionally, further understanding the ethical implications of such issues, allows for a much more nuanced approach to understanding how cyberattacks can affect society as a whole.
+              <p class="text-muted">
               </p>
               <br>
             </div>
